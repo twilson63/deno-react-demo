@@ -1,6 +1,7 @@
 {
   "imports": {
     "react": "https://esm.sh/react@alpha",
-    "react-dom": "https://esm.sh/react-dom@alpha"
+    "react-dom": "https://esm.sh/react-dom@alpha",
+    "react-dom/server": "https://esm.sh/react-dom@alpha/server"
   }
 }
