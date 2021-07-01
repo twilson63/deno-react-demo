@@ -1,7 +1,26 @@
 import React from 'react'
+import { Html } from './Html.jsx'
 
-export function App() {
+const { Suspense, lazy } = React
+
+const LazyComponent = lazy(() => import('./LazyComponent.jsx'))
+
+
+export function App({ assets }) {
   return (
-    <h1>Hello World</h1>
+    <Html title="Demo" assets={assets}>
+      <Content />
+    </Html>
+  )
+}
+
+function Content() {
+  return (
+    <>
+      <Suspense fallback={<div>Loading..</div>}>
+        <LazyComponent />
+      </Suspense>
+      <h1>Hello World</h1>
+    </>
   )
 }
